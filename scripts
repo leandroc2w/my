@@ -1,0 +1,13 @@
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+
+function clear(){
+ ctx.fillStyle = "#000";
+ ctx.fillRect(0, 0, c.width, c.height);
+}clear();
+
+$(c).mousedown(function(e){
+  var mouseX = e.pageX - c.offsetLeft;
+  var mouseY = e.pageY - c.offsetTop;
+  
+});

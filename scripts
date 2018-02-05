@@ -8,8 +8,8 @@ function clear(){
 
 function update(){
   var img = new Image();
-  img.src = "http://inspiresuafesta.com/wp-content/uploads/2015/01/tntblock.png";
-  ctx.drawImage(img,0,0,135,103);
+  img.src = "http://www.williammalone.com/articles/create-html5-canvas-javascript-sprite-animation/images/coin-sprite-animation-sprite-sheet.png";
+  ctx.drawImage(img,0,0,440,44);
 }update();
 
 $(c).mousedown(function(e){

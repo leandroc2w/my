@@ -6,6 +6,12 @@ function clear(){
  ctx.fillRect(0, 0, c.width, c.height);
 }clear();
 
+function update(){
+  var img = new Image();
+  img.src = "http://inspiresuafesta.com/wp-content/uploads/2015/01/tntblock.png";
+  ctx.drawImage(img,0,0,135,103);
+}update();
+
 $(c).mousedown(function(e){
   var mouseX = e.pageX - c.offsetLeft;
   var mouseY = e.pageY - c.offsetTop;

@@ -16,7 +16,7 @@ function update(){
   clear();
   var img = new Image();
   img.src = "http://www.williammalone.com/articles/create-html5-canvas-javascript-sprite-animation/images/coin-sprite-animation-sprite-sheet.png";
-  ctx.drawImage(img,x,y,44,40,0,0,44,44);
+  ctx.drawImage(img,x,y,44,40,50,30,50,50);
 }update();
 
 $(c).mousedown(function(e){
@@ -27,13 +27,15 @@ $(c).mousedown(function(e){
 
 $(c).mousemove(function(e){
  if(mouse){
- 
- //update();
+  var moveX = e.pageX - c.offsetLeft;
+  x = (x+mouseX-moveX)%440;
+  if(x < 0)x = 440;
+  mouseX = moveX;
+  update();
 }});
 
 $(c).mouseup(function(e){
   mouse = false;
-  x += e.pageX - c.offsetLeft;
-  y += e.pageY - c.offsetTop ;
-  alert(x+"   "+y);
+  mouseX = null;
+
 });

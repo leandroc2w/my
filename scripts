@@ -1,19 +1,39 @@
 var c = document.getElementById("c");
 var ctx = c.getContext("2d");
 
+var x = 0;
+var y = 0;
+var mouse;
+var mouseX;
+var mouseY;
+
 function clear(){
  ctx.fillStyle = "#000";
  ctx.fillRect(0, 0, c.width, c.height);
-}clear();
+}
 
 function update(){
+  clear();
   var img = new Image();
   img.src = "http://www.williammalone.com/articles/create-html5-canvas-javascript-sprite-animation/images/coin-sprite-animation-sprite-sheet.png";
-  ctx.drawImage(img,0,0,440,44);
+  ctx.drawImage(img,x,y,44,40,0,0,44,44);
 }update();
 
 $(c).mousedown(function(e){
-  var mouseX = e.pageX - c.offsetLeft;
-  var mouseY = e.pageY - c.offsetTop;
-  
+  mouseX = e.pageX - c.offsetLeft;
+  mouseY = e.pageY - c.offsetTop;
+  mouse = true;
+});
+
+$(c).mousemove(function(e){
+ if(mouse){
+ 
+ //update();
+}});
+
+$(c).mouseup(function(e){
+  mouse = false;
+  x += e.pageX - c.offsetLeft;
+  y += e.pageY - c.offsetTop ;
+  alert(x+"   "+y);
 });
